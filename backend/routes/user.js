@@ -9,6 +9,10 @@ var {
 } = require("../controllers/user");
 var { uploadUserAvatar } = require("../upload");
 
+router.get("/", (req, res) => {
+  res.send("User route is working!");
+});
+
 router.post("/register", userRegister);
 router.post("/login", userLogin);
 router.put("/change-password", changePass);

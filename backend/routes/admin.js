@@ -27,6 +27,10 @@ var {
   deleteRole,
 } = require("../controllers/admin/user");
 
+router.get("/", (req, res) => {
+  res.send("Admin route is working!");
+});
+
 router.get("/role/list", listRole);
 router.post("/role/create", createRole);
 router.put("/role/update", updateRole);

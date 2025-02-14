@@ -10,6 +10,10 @@ var {
   deleteShop,
 } = require("../controllers/seller/shop");
 
+router.get("/", (req, res) => {
+  res.send("Seller route is working!");
+});
+
 router.post("/shop/create", uploadShopLogo.single("logo"), createShop);
 router.get("/shop/show", showShop);
 router.put("/shop/update", uploadShopLogo.single("logo"), updateShop);

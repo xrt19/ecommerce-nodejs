@@ -15,6 +15,11 @@ var {
   removeProductReview, //  Remove product review
 } = require("../controllers/index");
 
+router.get("/", (req, res) => {
+  res.send("Welcome to the E-commerce API");
+});
+
+
 router.get("/site", showSite);
 
 router.get("/category/all", listAllCategories);

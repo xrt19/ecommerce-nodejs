@@ -5,7 +5,12 @@ var { reviewSchema } = require("../models/review");
 var { shopSchema } = require("../models/shop");
 var { userSchema } = require("../models/user");
 
-mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+// versi asli
+// mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+
+// versi gpt
+const mongoURL = process.env.MONGO_URL || "mongodb://admin:password@localhost:27017/ecommerce";
+mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Site = mongoose.model("Site", siteSchema);
 const User = mongoose.model("User", userSchema);

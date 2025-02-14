@@ -1,7 +1,12 @@
 var mongoose = require("mongoose");
 var { userSchema, roleSchema } = require("../../models/user");
 
-mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+// versi asli
+// mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+
+// versi gpt
+const mongoURL = process.env.MONGO_URL || "mongodb://admin:password@localhost:27017/ecommerce";
+mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Role = mongoose.model("Role", roleSchema);
 const User = mongoose.model("User", userSchema);

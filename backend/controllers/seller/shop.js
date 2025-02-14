@@ -2,7 +2,12 @@ var mongoose = require("mongoose");
 var { userSchema } = require("../../models/user");
 var { shopSchema } = require("../../models/shop");
 
-mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+// versi asli
+// mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+
+// versi gpt
+const mongoURL = process.env.MONGO_URL || "mongodb://admin:password@localhost:27017/ecommerce";
+mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const User = mongoose.model("User", userSchema);
 const Shop = mongoose.model("Shop", shopSchema);

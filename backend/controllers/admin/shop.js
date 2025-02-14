@@ -1,7 +1,13 @@
 var mongoose = require("mongoose");
 var { shopSchema } = require("../../models/shop");
 
-mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+// versi asli
+// mongoose.connect("mongodb://admin:password@localhost:27017/ecommerce");
+
+// versi gpt
+const mongoURL = process.env.MONGO_URL || "mongodb://admin:password@localhost:27017/ecommerce";
+mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
+
 const Shop = mongoose.model("Shop", shopSchema);
 
 // Shop Management ===================================================
