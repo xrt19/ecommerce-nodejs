@@ -1,3 +1,26 @@
+# Node.js Containerization Practice
+
+This repository is a fork of another project that I am using to learn containerization with Node.js. In the branch named **irfan**, I have implemented my containerization exercises and configurations.
+
+## Overview
+
+- **Base Project:** Forked from an existing repository.
+- **Focus:** Containerizing a Node.js application using Docker.
+- **Branch:** `irfan` – Contains all my containerization practice.
+
+## Technologies Used
+
+- **Runtime:** Node.js
+- **Containerization Tool:** Docker
+
+## What's Inside the `irfan` Branch
+
+- Customized Dockerfile(s) for the Node.js application.
+- Configuration files for container setup.
+- Scripts and documentation related to my containerization experiments.
+
+===
+
 # A Simple E-commerce System Built with Nodejs
 
 ## Features
